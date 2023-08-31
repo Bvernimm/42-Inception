@@ -7,6 +7,7 @@ RUN apt-get install -y openssl
 
 # nginx SSL
 COPY tools/openssl.sh /tools/
+RUN chmod +x /tools/openssl.sh
 RUN /tools/openssl.sh
 
 # nginx config
