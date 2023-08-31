@@ -9,10 +9,8 @@ wp core install     --url=$DOMAIN\
                     --title=$WP_TITLE\
                     --admin_user=$WP_ADMIN\
                     --admin_password=$WP_ADMIN_PASSWORD\
-                    --allow-root \
-					--path='/var/www/wordpress'
+                    --allow-root
 wp user create      $WP_USER\
                     --role=author\
                     --user_pass=$WP_USER_PASSWORD\
-                    --allow-root \
-					--path='/var/www/wordpress'
+                    --allow-root
