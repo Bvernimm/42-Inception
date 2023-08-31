@@ -20,6 +20,6 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY tools/config.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/config.sh
-RUN /usr/local/bin/config.sh
+ENTRYPOINT [ "/usr/local/bin/config.sh" ]
 
 CMD ["/usr/sbin/php-fpm7.3", "-F"]
