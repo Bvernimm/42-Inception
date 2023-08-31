@@ -18,8 +18,8 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/w
 
-COPY tools/config.sh /tools/
-RUN chmod +x /tools/config.sh
-RUN /tools/config.sh
+COPY tools/config.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/config.sh
+RUN /usr/local/bin/config.sh
 
 CMD ["/usr/sbin/php-fpm7.3", "-F"]
