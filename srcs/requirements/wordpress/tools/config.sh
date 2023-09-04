@@ -1,4 +1,4 @@
-
+#!/bin/bash
 wp config create	--allow-root \
 					--dbname=$SQL_DATABASE \
 					--dbuser=$SQL_USER \
