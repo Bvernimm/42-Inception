@@ -13,6 +13,7 @@ services:
     restart: always
     ports:
       - "3306:3306"
+      
   nginx:
     container_name: nginx
     volumes:
@@ -27,6 +28,7 @@ services:
     ports:
       - "443:443"
     restart: always
+
   wordpress:
     container_name: wordpress
     env_file: .env
