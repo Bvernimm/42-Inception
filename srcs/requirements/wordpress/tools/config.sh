@@ -27,7 +27,7 @@ if [ ! -f wp-config.php ]; then
     # wp plugin update --all --allow-root
     # wp plugin activate redis-cache --allow-root
 fi
-# chown -R www-data:www-data .
-# chmod -R 777 .
+chown -R www-data:www-data .
+chmod -R 777 .
 # wp redis enable --force --allow-root
 exec $@
