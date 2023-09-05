@@ -23,6 +23,9 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 # RUN chmod +x /usr/local/bin/cmd.sh
 # RUN /usr/local/bin/cmd.sh
 
+RUN chown -R www-data:www-data /var/www/*
+RUN chown -R 755 /var/www/*
+
 RUN mkdir -p /run/php/
 RUN touch /run/php/php7.3-fpm.pid
 
