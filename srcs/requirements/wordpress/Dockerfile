@@ -20,7 +20,7 @@ RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY tools/config.sh /usr/local/bin/config.sh
-# COPY tools/wp-config.php /usr/local/bin/wp-config.php
+COPY tools/wp-config.php /usr/local/bin/wp-config.php
 RUN chmod +x /usr/local/bin/config.sh
 ENTRYPOINT [ "/usr/local/bin/config.sh" ]
 
