@@ -1,9 +1,13 @@
 #!/bin/bash
-service mysql start;
-mysql -e "CREATE DATABASE IF NOT EXISTS \`${SQL_DATABASE}\`;"
-mysql -e "CREATE USER IF NOT EXISTS \`${SQL_USER}\`@'localhost' IDENTIFIED BY '${SQL_PASSWORD}';"
-mysql -e "GRANT ALL PRIVILEGES ON \`${SQL_DATABASE}\`.* TO \`${SQL_USER}\`@'%' IDENTIFIED BY '${SQL_PASSWORD}';"
-mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${SQL_ROOT_PASSWORD}';"
-mysql -e "FLUSH PRIVILEGES;"
-mysqladmin -u root -p$SQL_ROOT_PASSWORD shutdown
-exec mysqld_safe
+
+echo "MariaDB Setup";
+
+# Modifie les champs pour donner la valeur des variables d'environnement
+sed -i "s/DB_NAME/${DB_NAME}/" /var/www/initial_db.sql;
+sed -i "s/WP_ADMIN_LOGIN/${WP_ADMIN_LOGIN}/" /var/www/initial_db.sql;
+sed -i "s/WP_ADMIN_PASSWORD/${WP_ADMIN_PASSWORD}/" /var/www/initial_db.sql;
+
+echo "${DB_NAME} est ok avec ${WP_ADMIN_LOGIN} et ${WP_ADMIN_PASSWORD}";
+
+# Lance MySQL
+exec mysqld_safe --init-file=/var/www/initial_db.sql
