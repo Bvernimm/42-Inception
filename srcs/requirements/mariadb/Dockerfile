@@ -12,4 +12,4 @@ EXPOSE 3306
 # MySQL setup
 COPY tools/MySQL.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/MySQL.sh
-CMD ["/usr/local/bin/MySQL.sh"]
+ENTRYPOINT ["/usr/local/bin/MySQL.sh"]
