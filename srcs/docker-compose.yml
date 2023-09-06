@@ -47,7 +47,7 @@ services:
 
 volumes:
   wp:
-    name: wp
+    # name: wp
     driver: local
     driver_opts:
       type: none
