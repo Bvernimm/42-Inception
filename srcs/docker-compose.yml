@@ -46,14 +46,14 @@ services:
 
 
 volumes:
-  wp:
+  wordpress:
     # name: wp
     driver: local
     driver_opts:
       type: none
       o: bind
       device: '/Users/bvernimm/data/wordpress'
-  db:
+  mariadb:
     # name: db
     driver: local
     driver_opts:
