@@ -13,6 +13,6 @@ addgroup www-data www-data
 addgroup root www-data
 # wp core download --allow-root
 
-echo "Wassup";
-pwd;
-echo "Wassup";
+# echo "Wassup";
+# pwd;
+# echo "Wassup";
