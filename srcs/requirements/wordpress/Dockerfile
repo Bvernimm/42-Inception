@@ -19,15 +19,16 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 RUN chmod +x wp-cli.phar
 RUN mv wp-cli.phar /usr/local/bin/wp
 
-# COPY tools/cmd.sh /usr/local/bin/cmd.sh
-# RUN chmod +x /usr/local/bin/cmd.sh
-# RUN /usr/local/bin/cmd.sh
+COPY tools/cmd.sh /usr/local/bin/cmd.sh
+RUN chmod +x /usr/local/bin/cmd.sh
+RUN /usr/local/bin/cmd.sh
 
-RUN chown -R www-data:www-data /var/www/*
-RUN chown -R 755 /var/www/*
+# RUN chown -R www-data:www-data /var/www/*
+# RUN chown -R 755 /var/www/* 
+# ?
 
-RUN mkdir -p /run/php/
-RUN touch /run/php/php7.3-fpm.pid
+# RUN mkdir -p /run/php/
+# RUN touch /run/php/php7.3-fpm.pid
 
 COPY tools/config.sh /usr/local/bin/config.sh
 COPY tools/wp-config.php /usr/local/bin/wp-config.php
