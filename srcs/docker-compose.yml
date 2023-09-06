@@ -54,7 +54,7 @@ volumes:
       o: bind
       device: '/Users/bvernimm/data/wordpress'
   db:
-    name: db
+    # name: db
     driver: local
     driver_opts:
       type: none
