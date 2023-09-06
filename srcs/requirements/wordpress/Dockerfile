@@ -19,7 +19,7 @@ WORKDIR /var/www/html/wordpress
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /var/www/html/wordpress
 RUN chmod +x wp-cli.phar
-RUN mv wp-cli.phar /tools/wp
+RUN cp wp-cli.phar /tools/wp
 
 COPY tools/cmd.sh /usr/tools/cmd.sh
 RUN chmod +x /tools/cmd.sh
