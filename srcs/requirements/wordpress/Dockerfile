@@ -16,8 +16,8 @@ COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
 # RUN chmod +x /etc/php/7.3/fpm/pool.d
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-RUN chmod +x wp-cli.phar
-RUN mv wp-cli.phar /usr/local/bin/wp
+# RUN chmod +x wp-cli.phar
+# RUN mv wp-cli.phar /usr/local/bin/wp
 
 COPY tools/cmd.sh /usr/local/bin/cmd.sh
 RUN chmod +x /usr/local/bin/cmd.sh
