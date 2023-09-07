@@ -47,15 +47,15 @@ services:
 
 volumes:
   wp:
-    name: wp
     driver: local
+    name: wp
     driver_opts:
       type: none
       o: bind
       device: '/Users/bvernimm/data/wordpress'
   db:
-    name: db
     driver: local
+    name: db
     driver_opts:
       type: none
       o: bind
