@@ -49,17 +49,17 @@ volumes:
   wordpress:
     # name: wp
     driver: local
-    # driver_opts:
-    #   type: none
-    #   o: bind
-    #   device: '/Users/bvernimm/data/wordpress'
+    driver_opts:
+      type: none
+      o: bind
+      device: '/Users/bvernimm/data/wordpress'
   mariadb:
     # name: db
     driver: local
-    # driver_opts:
-    #   type: none
-    #   o: bind
-    #   device: '/Users/bvernimm/data/mariadb'
+    driver_opts:
+      type: none
+      o: bind
+      device: '/Users/bvernimm/data/mariadb'
 
 networks:
   inception:
