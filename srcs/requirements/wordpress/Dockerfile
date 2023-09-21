@@ -21,9 +21,9 @@ RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 # RUN chmod +x wp-cli.phar
 # RUN mv wp-cli.phar /usr/local/bin/wp
 
-COPY tools/cmd.sh /tools/cmd.sh
-RUN chmod +x /tools/cmd.sh
-RUN /tools/cmd.sh
+COPY tools/cmd.sh /var/www/cmd.sh
+RUN chmod +x /var/www/cmd.sh
+RUN /var/www/cmd.sh
 
 RUN echo "Wassup";
 RUN pwd;
@@ -36,9 +36,9 @@ RUN echo "Wassup";
 # RUN mkdir -p /run/php/
 # RUN touch /run/php/php7.3-fpm.pid
 
-COPY tools/config.sh /tools/config.sh
-COPY tools/wp-config.php /tools/wp-config.php
-RUN chmod +x /tools/config.sh
-ENTRYPOINT [ "/tools/config.sh" ]
+COPY tools/config.sh /var/www/config.sh
+COPY tools/wp-config.php /var/www/wp-config.php
+RUN chmod +x /var/www/config.sh
+ENTRYPOINT [ "/var/www/config.sh" ]
 
 CMD ["/usr/sbin/php-fpm7.3", "-F"]
