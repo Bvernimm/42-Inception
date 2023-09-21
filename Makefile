@@ -17,10 +17,10 @@
 # .PHONY: all stop down re
 
 all: 
-	@mkdir -p ~/data
-	@mkdir -p ~/data/mariadb
-	@mkdir -p ~/data/wordpress
-	@docker-compose -f ./srcs/docker-compose.yml up
+	mkdir -p ~/data
+	mkdir -p ~/data/mariadb
+	mkdir -p ~/data/wordpress
+	docker-compose -f ./srcs/docker-compose.yml up
 
 down:
 	@docker-compose -f ./srcs/docker-compose.yml down
