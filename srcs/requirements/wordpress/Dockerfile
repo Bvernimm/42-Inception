@@ -25,9 +25,9 @@ COPY tools/cmd.sh /var/www/cmd.sh
 RUN chmod +x /var/www/cmd.sh
 RUN /var/www/cmd.sh
 
-RUN echo "Wassup";
-RUN pwd;
-RUN echo "Wassup";
+# RUN echo "Wassup";
+# RUN pwd;
+# RUN echo "Wassup";
 
 # RUN chown -R www-data:www-data /var/www/*
 # RUN chown -R 755 /var/www/* 
